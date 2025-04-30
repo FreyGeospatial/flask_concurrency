@@ -10,6 +10,9 @@ def index():
     return "Hello from Flask with Gunicorn!"
 
 
+# this demonstrates flask concurrency.
+# simply curl the endpoint with a sleep time
+# and see how the server handles multiple requests
 @app.route("/wait/<int:seconds>")
 def wait(seconds):
     thread_name = threading.current_thread().name
